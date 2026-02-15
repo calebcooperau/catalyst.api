@@ -20,8 +20,8 @@ type HttpConfig struct {
 	Timeout      int
 }
 type AuthenticationConfig struct {
-	GithubClientID     string
-	GithubClientSecret string
+	GoogleClientID     string
+	GoogleClientSecret string
 }
 
 func LoadConfig() (*Config, error) {
@@ -34,8 +34,8 @@ func LoadConfig() (*Config, error) {
 	port := getEnvVariable("PORT", ":8080")
 	isProduction := getEnvAsBool("ISPRODUCTION", false)
 	timeout := getEnvVariableAsInt("TIMEOUT", 20)
-	githubClientID := getEnvVariable("GITHUB_CLIENT_ID", "no client id")
-	githubClientSecret := getEnvVariable("GITHUB_CLIENT_SECRET", "no client secret")
+	googleClientID := getEnvVariable("GOOGLE_CLIENT_ID", "no client id")
+	googleClientSecret := getEnvVariable("GOOGLE_CLIENT_SECRET", "no client secret")
 
 	return &Config{
 		HttpConfig: HttpConfig{
@@ -44,8 +44,8 @@ func LoadConfig() (*Config, error) {
 			Timeout:      timeout,
 		},
 		AuthenticationConfig: AuthenticationConfig{
-			GithubClientID:     githubClientID,
-			GithubClientSecret: githubClientSecret,
+			GoogleClientID:     googleClientID,
+			GoogleClientSecret: googleClientSecret,
 		},
 	}, nil
 }

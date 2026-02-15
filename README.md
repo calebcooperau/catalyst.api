@@ -1,2 +1,2 @@
 # Catalyst
-CLI tool for rapidly prototyping Angular applications
+Web App for managing finances

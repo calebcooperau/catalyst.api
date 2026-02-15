@@ -30,6 +30,6 @@ func NewAuthentication(cfg *config.Config) {
 	gothic.Store = store
 
 	goth.UseProviders(
-		github.New(cfg.AuthenticationConfig.GithubClientID, cfg.AuthenticationConfig.GithubClientSecret, "http://localhost:42069/auth/github/callback", "user", "repo"),
+		github.New(cfg.AuthenticationConfig.GoogleClientID, cfg.AuthenticationConfig.GoogleClientSecret, "http://localhost:42069/auth/google/callback", "user", "repo"),
 	)
 }
